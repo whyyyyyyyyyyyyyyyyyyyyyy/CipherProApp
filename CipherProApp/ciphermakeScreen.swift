@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct ciphermakeScreen: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct ciphermakeScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        ciphermakeScreen()
-    }
-}
+//struct ciphermakeScreen: View {
+//    var key: String
+//    var body: some View {
+//        Text("h")
+//        Text(key)
+//    }
+//}
+//
+//struct ciphermakeScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ciphermakeScreen(key: "")
+//    }
+//}

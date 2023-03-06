@@ -19,17 +19,22 @@ struct baseScreen: View {
                     Label("keys", systemImage: "key")
                 }
         }
-        .navigationBarBackButtonHidden(true)
+            .navigationBarBackButtonHidden(true)
     }
 }
 
 struct houseScreen: View {
     var body: some View {
         VStack {
-            Text("ENCODED")
-            Text("TEXT")
+            VStack {
+                Text("ENCODED")
+                Text("TEXT")
+            }
+            .font(.system(size: 56.0))
+            Spacer()
+            Rectangle()
+                .frame(width: 322, height: 2)
         }
-        .font(.system(size: 56.0))
     }
 }
 

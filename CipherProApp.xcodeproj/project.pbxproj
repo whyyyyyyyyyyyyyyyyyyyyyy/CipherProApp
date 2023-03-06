@@ -14,6 +14,7 @@
 		CB11E4C029B5A4B60098F44D /* baseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB11E4BF29B5A4B60098F44D /* baseScreen.swift */; };
 		CB11E4C229B5A4D80098F44D /* listScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB11E4C129B5A4D80098F44D /* listScreen.swift */; };
 		CB11E4C429B5A4F10098F44D /* ciphermakeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB11E4C329B5A4F10098F44D /* ciphermakeScreen.swift */; };
+		CB11E4C629B5AF6D0098F44D /* cipherStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB11E4C529B5AF6D0098F44D /* cipherStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		CB11E4BF29B5A4B60098F44D /* baseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baseScreen.swift; sourceTree = "<group>"; };
 		CB11E4C129B5A4D80098F44D /* listScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listScreen.swift; sourceTree = "<group>"; };
 		CB11E4C329B5A4F10098F44D /* ciphermakeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ciphermakeScreen.swift; sourceTree = "<group>"; };
+		CB11E4C529B5AF6D0098F44D /* cipherStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cipherStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				CB11E4B329B5A43F0098F44D /* ContentView.swift */,
 				CB11E4BF29B5A4B60098F44D /* baseScreen.swift */,
 				CB11E4C129B5A4D80098F44D /* listScreen.swift */,
+				CB11E4C529B5AF6D0098F44D /* cipherStorage.swift */,
 				CB11E4C329B5A4F10098F44D /* ciphermakeScreen.swift */,
 				CB11E4B529B5A4410098F44D /* Assets.xcassets */,
 				CB11E4B729B5A4410098F44D /* Preview Content */,
@@ -148,6 +151,7 @@
 			files = (
 				CB11E4C029B5A4B60098F44D /* baseScreen.swift in Sources */,
 				CB11E4B429B5A43F0098F44D /* ContentView.swift in Sources */,
+				CB11E4C629B5AF6D0098F44D /* cipherStorage.swift in Sources */,
 				CB11E4B229B5A43F0098F44D /* CipherProAppApp.swift in Sources */,
 				CB11E4C229B5A4D80098F44D /* listScreen.swift in Sources */,
 				CB11E4C429B5A4F10098F44D /* ciphermakeScreen.swift in Sources */,
