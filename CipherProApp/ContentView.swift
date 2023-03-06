@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            NavigationLink(destination: baseScreen()) {
+                Text("Open")
+                    .foregroundColor(.white)
+                    .background(RoundedRectangle(cornerRadius: 25, style: .continuous).frame(width: 200, height: 150))
+            }
+        }
     }
 }
 
