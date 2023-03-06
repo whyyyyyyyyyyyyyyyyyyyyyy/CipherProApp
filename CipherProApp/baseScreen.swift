@@ -9,7 +9,27 @@ import SwiftUI
 
 struct baseScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            houseScreen()
+                .tabItem {
+                    Label("home", systemImage: "house")
+                }
+            listScreen()
+                .tabItem {
+                    Label("keys", systemImage: "key")
+                }
+        }
+        .navigationBarBackButtonHidden(true)
+    }
+}
+
+struct houseScreen: View {
+    var body: some View {
+        VStack {
+            Text("ENCODED")
+            Text("TEXT")
+        }
+        .font(.system(size: 56.0))
     }
 }
 
