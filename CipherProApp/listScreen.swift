@@ -22,34 +22,38 @@ struct keyRow: View {
     }
 }
 
-struct letters: ShapeStyle {
-    func makeBody(configuration: Configuration) -> some View {
-            configuration.label
-            .fill(Color.red).frame(width: 19, height: 19)
-}
+
 
 struct listScreen: View {
     @State public var keyStore = [
-        Key(name: "hey", a: "B", b: " ", c: " ", d: " ", e: " ", f: " ", g: " ", h: " ", i: " ", j: " ", k: " ", l: " ", m: " ", n: " ", o: " ", p: " ", q: " ", r: " ", s: " ", t: " ", u: " ", v: " ", w: " ", x: " ", y: " ", z: " "),
-        Key(name: "Unnamed 2", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: ""),
-        Key(name: "hilykutfjy", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: ""),
-        Key(name: "wooorld", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: "")
+        Key(name: "Key 1", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: ""),
+        Key(name: "Key 2", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: ""),
+        Key(name: "Key 3", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: ""),
+        Key(name: "Key 4", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: "")
     ]
         var body: some View {
-            VStack {
-                NavigationView {
+            
+            NavigationView {
+                VStack {
                     List(keyStore) { item in
                         NavigationLink(destination: ciphermakeScreen(key: item)) {
                             keyRow(key: item)
                         }
                     }
                     .navigationBarTitle("Encryption keys")
-                }
-                Button(role: .destructive, action: addTo, label: { Text("bhjvgh")})
+                    NavigationLink(destination: ciphermakeScreen(key: addNew())) {
+                        Text("New Encryption Key")
+                    }
             }
-    }
-    func addTo() {
-        keyStore.append(Key(name: "added", a: "h", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: ""))
+                
+//                Button(action: addTo, label: { Text("New Encryption Key")})
+//            }
+            }
+        }
+    func addNew() -> Key {
+        let newKey = Key(name: "added", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: "")
+        keyStore.append(Key(name: "added", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: ""))
+        return newKey
     }
     func counting() -> Int{
         return keyStore.count - 1
@@ -61,15 +65,11 @@ struct listScreen: View {
 struct ciphermakeScreen: View {
     var key: Key
     var body: some View {
-//        VStack {
-//            ForEach(key) { stuff in
-//                Text("hye")
-//            }
-//        }
         VStack {
+            Text(key.name)
             Group {
                 HStack {
-                    RoundedRectangle(cornerRadius: 18).overlay(Text("A"))
+                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("A"))
                     RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("B"))
                     RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("C"))
                     RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("D"))
