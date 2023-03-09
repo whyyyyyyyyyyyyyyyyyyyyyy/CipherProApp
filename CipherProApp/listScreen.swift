@@ -10,8 +10,8 @@ import SwiftUI
 
 struct listScreen: View {
     @State public var keyStore = [
-        Key(name: "Key 1", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: ""),
-        Key(name: "Key 2", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: "")
+        Key(name: "Key 1", a: "A", b: "B", c: "C", d: "D", e: "E", f: "F", g: "G", h: "H", i: "I", j: "J", k: "K", l: "L", m: "M", n: "N", o: "O", p: "P", q: "Q", r: "R", s: "S", t: "T", u: "U", v: "V", w: "W", x: "X", y: "Y", z: "Z"),
+        Key(name: "Key 2", a: "A", b: "B", c: "C", d: "D", e: "E", f: "F", g: "G", h: "H", i: "I", j: "J", k: "K", l: "L", m: "M", n: "N", o: "O", p: "P", q: "Q", r: "R", s: "S", t: "T", u: "U", v: "V", w: "W", x: "X", y: "Y", z: "Z")
     ]
         var body: some View {
             NavigationView {
@@ -28,7 +28,7 @@ struct listScreen: View {
             }
         }
     func addNew() {
-        keyStore.append(Key(name: "Key " + String(counting() + 2), a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: ""))
+        keyStore.append(Key(name: "Key " + String(counting() + 2), a: "A", b: "B", c: "C", d: "D", e: "E", f: "F", g: "G", h: "H", i: "I", j: "J", k: "K", l: "L", m: "M", n: "N", o: "O", p: "P", q: "Q", r: "R", s: "S", t: "T", u: "U", v: "V", w: "W", x: "X", y: "Y", z: "Z"))
     }
     func counting() -> Int{
         return keyStore.count - 1
@@ -51,33 +51,32 @@ struct listScreen: View {
 struct ciphermakeScreen: View {
     @State var key: Key
     let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-    @State private var selection0 = ""
-    @State private var selection1 = ""
-    @State private var selection2 = ""
-    @State private var selection3 = ""
-    @State private var selection4 = ""
-    @State private var selection5 = ""
-    @State private var selection6 = ""
-    @State private var selection7 = ""
-    @State private var selection8 = ""
-    @State private var selection9 = ""
-    @State private var selection10 = ""
-    @State private var selection11 = ""
-    @State private var selection12 = ""
-    @State private var selection13 = ""
-    @State private var selection14 = ""
-    @State private var selection15 = ""
-    @State private var selection16 = ""
-    @State private var selection17 = ""
-    @State private var selection18 = ""
-    @State private var selection19 = ""
-    @State private var selection20 = ""
-    @State private var selection21 = ""
-    @State private var selection22 = ""
-    @State private var selection23 = ""
-    @State private var selection24 = ""
-    @State private var selection25 = ""
-    @State private var selection26 = ""
+    @State var selection0 = ""
+    @State var selection1 = ""
+    @State var selection2 = ""
+    @State var selection3 = ""
+    @State var selection4 = ""
+    @State var selection5 = ""
+    @State var selection6 = ""
+    @State var selection7 = ""
+    @State var selection8 = ""
+    @State var selection9 = ""
+    @State var selection10 = ""
+    @State var selection11 = ""
+    @State var selection12 = ""
+    @State var selection13 = ""
+    @State var selection14 = ""
+    @State var selection15 = ""
+    @State var selection16 = ""
+    @State var selection17 = ""
+    @State var selection18 = ""
+    @State var selection19 = ""
+    @State var selection20 = ""
+    @State var selection21 = ""
+    @State var selection22 = ""
+    @State var selection23 = ""
+    @State var selection24 = ""
+    @State var selection25 = ""
     var body: some View {
         VStack {
             TextField("", text: $key.name)
@@ -337,10 +336,15 @@ struct ciphermakeScreen: View {
                 }
             }
             .font(.system(size: 11))
-            Button(action: doSomething, label: {Text("Save")})
+            HStack {
+                Button(action: starting, label: {Text("Start")})
+                Spacer()
+                Button(action: save, label: {Text("Save")})
+            }
+            .padding(.horizontal, 4.0)
         }
     }
-    func doSomething() {
+    func save() {
         key.a = selection0
         key.b = selection1
         key.c = selection2
@@ -368,6 +372,34 @@ struct ciphermakeScreen: View {
         key.y = selection24
         key.z = selection25
         transfer = key
+    }
+    func starting() {
+        selection0 = key.a
+        selection1 = key.b
+        selection2 = key.c
+        selection3 = key.d
+        selection4 = key.e
+        selection5 = key.f
+        selection6 = key.g
+        selection7 = key.h
+        selection8 = key.i
+        selection9 = key.j
+        selection10 = key.k
+        selection11 = key.l
+        selection12 = key.m
+        selection13 = key.n
+        selection14 = key.o
+        selection15 = key.p
+        selection16 = key.q
+        selection17 = key.r
+        selection18 = key.s
+        selection20 = key.t
+        selection20 = key.u
+        selection21 = key.v
+        selection22 = key.w
+        selection23 = key.x
+        selection24 = key.y
+        selection25 = key.z
     }
 }
 struct listScreen_Previews: PreviewProvider {
