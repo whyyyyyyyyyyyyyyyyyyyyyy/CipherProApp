@@ -40,7 +40,6 @@ public struct Key: Identifiable {
 
 
 
-public var keyAmount = 4
 
 
 //struct keyRow: View {

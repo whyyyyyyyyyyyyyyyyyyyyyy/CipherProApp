@@ -14,11 +14,7 @@ struct keyRow: View {
     var key: Key
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(key.name)
-            }
-        }
+        Text(key.name)
     }
 }
 
@@ -32,28 +28,21 @@ struct listScreen: View {
         Key(name: "Key 4", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: "")
     ]
         var body: some View {
-            
-            NavigationView {
-                VStack {
-                    List(keyStore) { item in
-                        NavigationLink(destination: ciphermakeScreen(key: item)) {
-                            keyRow(key: item)
+            VStack {
+                NavigationView {
+                        List(keyStore) { item in
+                            NavigationLink(destination: ciphermakeScreen(key: item)) {
+                                keyRow(key: item)
+                            }
                         }
-                    }
-                    .navigationBarTitle("Encryption keys")
-                    NavigationLink(destination: ciphermakeScreen(key: addNew())) {
-                        Text("New Encryption Key")
-                    }
-            }
+                        .navigationBarTitle("Encryption keys")
+                }
                 
-//                Button(action: addTo, label: { Text("New Encryption Key")})
-//            }
+                Button(action: addNew, label: { Text("New Encryption Key")})
             }
         }
-    func addNew() -> Key {
-        let newKey = Key(name: "added", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: "")
+    func addNew() {
         keyStore.append(Key(name: "added", a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: ""))
-        return newKey
     }
     func counting() -> Int{
         return keyStore.count - 1
@@ -69,10 +58,10 @@ struct ciphermakeScreen: View {
             Text(key.name)
             Group {
                 HStack {
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("A"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("B"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("C"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("D"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("A"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("B"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("C"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("D"))
                 }
                 HStack {
                     RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text(key.a))
@@ -83,10 +72,10 @@ struct ciphermakeScreen: View {
             }
             Group {
                 HStack {
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("E"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("F"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("G"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("H"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("E"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("F"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("G"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("H"))
                 }
                 HStack {
                     RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text(key.e))
@@ -97,10 +86,10 @@ struct ciphermakeScreen: View {
             }
             Group {
                 HStack {
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("I"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("J"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("K"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("L"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("I"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("J"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("K"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("L"))
                 }
                 HStack {
                     RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text(key.i))
@@ -111,10 +100,10 @@ struct ciphermakeScreen: View {
             }
             Group {
                 HStack {
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("M"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("N"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("O"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("P"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("M"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("N"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("O"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("P"))
                 }
                 HStack {
                     RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text(key.m))
@@ -125,10 +114,10 @@ struct ciphermakeScreen: View {
             }
             Group {
                 HStack {
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("Q"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("R"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("S"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("T"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("Q"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("R"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("S"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("T"))
                 }
                 HStack {
                     RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text(key.q))
@@ -139,10 +128,10 @@ struct ciphermakeScreen: View {
             }
             Group {
                 HStack {
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("U"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("V"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("W"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("X"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("U"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("V"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("W"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("X"))
                 }
                 HStack {
                     RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text(key.u))
@@ -153,14 +142,15 @@ struct ciphermakeScreen: View {
             }
             Group {
                 HStack {
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("Y"))
-                    RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text("Z"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("Y"))
+                    RoundedRectangle(cornerRadius: 50).fill(Color.gray).frame(width: 30, height: 25).overlay(Text("Z"))
                 }
                 HStack {
                     RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text(key.y))
                     RoundedRectangle(cornerRadius: 18).fill(Color.red).frame(width: 19, height: 19).overlay(Text(key.z))
                 }
             }
+            Spacer()
         }
     }
 }
