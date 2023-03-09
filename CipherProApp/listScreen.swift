@@ -393,7 +393,7 @@ struct ciphermakeScreen: View {
         selection16 = key.q
         selection17 = key.r
         selection18 = key.s
-        selection20 = key.t
+        selection19 = key.t
         selection20 = key.u
         selection21 = key.v
         selection22 = key.w
