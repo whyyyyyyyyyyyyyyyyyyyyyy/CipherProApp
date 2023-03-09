@@ -12,9 +12,8 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 NavigationLink(destination: baseScreen()) {
-                    Text("Open")
-                        .foregroundColor(.white)
-                        .background(RoundedRectangle(cornerRadius: 25, style: .continuous).frame(width: 200, height: 150))
+                    RoundedRectangle(cornerRadius: 25, style: .continuous).frame(width: 200, height: 150).foregroundColor(.blue).overlay(Text("Open")
+                        .foregroundColor(Color.white))
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
