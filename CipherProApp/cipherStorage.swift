@@ -40,11 +40,4 @@ public struct Key: Identifiable {
 
 
 
-
-
-//struct keyRow: View {
-//    var uyt = Key.self
-//    var body: some View {
-//        Text(uyt.name)
-//    }
-//}
+public var transfer = Key(name: "r", a: "D", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "", q: "", r: "", s: "", t: "", u: "", v: "", w: "", x: "", y: "", z: "")
